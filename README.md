@@ -1,43 +1,57 @@
-// 1. DADOS DO PROJETO (Centralizados para facilitar edição)
-const jornadaData = [
-  { id: 1, title: "Cultivo", desc: "Manejo responsável do solo." },
-  { id: 2, title: "Indústria", desc: "Transformação tecnológica do grão." },
-  { id: 3, title: "Cidade", desc: "O malte chegando ao consumidor." }
-];
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Do Campo ao Copo | UX & Agro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header" id="topo">
+    <div class="header-inner">
+      <a class="logo" href="#inicio">
+        <img src="./img/logo.png" alt="Logo Agrinho" />
+      </a>
+      <nav class="navbar" aria-label="Navegação principal">
+        <button class="hamburger" id="menu-toggle" aria-label="Abrir menu">☰</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#jornada">Jornada</a></li>
+          <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+          <li><a href="#quiz">Quiz</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-// 2. RENDERIZAÇÃO DINÂMICA
-const renderJornada = () => {
-  const container = document.getElementById('jornada-container');
-  if (!container) return;
+  <aside class="accessibility-controls">
+    <button onclick="changeFontSize('increase')" aria-label="Aumentar fonte">A+</button>
+    <button onclick="changeFontSize('decrease')" aria-label="Diminuir fonte">A-</button>
+    <button onclick="toggleContrast()" aria-label="Alto Contraste">◐</button>
+  </aside>
 
-  container.innerHTML = jornadaData.map(item => `
-    <article class="process-card surface-block">
-      <div class="process-number">0${item.id}</div>
-      <h3>${item.title}</h3>
-      <p>${item.desc}</p>
-    </article>
-  `).join('');
-};
+  <main>
+    <section id="inicio" class="hero-section reveal">
+      <h1>Agro forte, futuro sustentável.</h1>
+      <p>A conexão entre o campo e a cidade através do malte.</p>
+    </section>
 
-// 3. ACESSIBILIDADE: CONTROLE DE FONTE
-let fontSize = 100; // Em porcentagem (%)
-const changeFontSize = (type) => {
-  fontSize += (type === 'increase' ? 10 : -10);
-  document.documentElement.style.fontSize = `${fontSize}%`;
-};
+    <section id="jornada" class="content-section reveal">
+      <div class="section-heading">
+        <h2>A Jornada do Grão</h2>
+      </div>
+      <div id="jornada-container" class="process-grid">
+        </div>
+    </section>
 
-// 4. SCROLL REVEAL (Visão Sistêmica)
-const handleScroll = () => {
-  const sections = document.querySelectorAll('.reveal');
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) sec.classList.add('visible');
-  });
-};
+    <section id="sustentabilidade" class="content-section reveal">
+      <div class="section-heading">
+        <h2>Sustentabilidade</h2>
+      </div>
+      <div id="sustentabilidade-container" class="cards-grid">
+        </div>
+    </section>
+  </main>
 
-// Inicialização
-window.addEventListener('scroll', handleScroll);
-document.addEventListener('DOMContentLoaded', () => {
-  renderJornada();
-  handleScroll();
-});
+  <script src="script.js"></script>
+</body>
+</html>
