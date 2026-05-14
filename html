@@ -1,57 +1,217 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Do Campo ao Copo | UX & Agro</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agro Forte - Futuro Sustentável. Descubra práticas de agricultura sustentável e regenerativa para um planeta mais verde.">
+    <meta name="keywords" content="agricultura sustentável, agroecologia, agricultura regenerativa, futuro sustentável">
+    <meta name="author" content="Agro Forte">
+    <meta name="theme-color" content="#2d5016">
+    <title>Agro Forte - Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header" id="topo">
-    <div class="header-inner">
-      <a class="logo" href="#inicio">
-        <img src="./img/logo.png" alt="Logo Agrinho" />
-      </a>
-      <nav class="navbar" aria-label="Navegação principal">
-        <button class="hamburger" id="menu-toggle" aria-label="Abrir menu">☰</button>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#jornada">Jornada</a></li>
-          <li><a href="#sustentabilidade">Sustentabilidade</a></li>
-          <li><a href="#quiz">Quiz</a></li>
-        </ul>
-      </nav>
+    <!-- ===== HEADER / NAVEGAÇÃO ===== -->
+    <header class="header" role="banner">
+        <div class="container-header">
+            <div class="logo-section">
+                <h1 class="logo">
+                    <span class="logo-icon" aria-hidden="true">🌱</span>
+                    Agro Forte
+                </h1>
+            </div>
+            
+            <nav class="nav-main" role="navigation" aria-label="Navegação principal">
+                <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu">
+                    <span class="hamburger"></span>
+                    <span class="sr-only">Abrir menu de navegação</span>
+                </button>
+                
+                <ul class="nav-list" id="navMenu">
+                    <li><a href="#hero" class="nav-link">Início</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#praticas" class="nav-link">Práticas</a></li>
+                    <li><a href="#beneficios" class="nav-link">Benefícios</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-controls">
+                <button class="btn-accessibility" id="fontSizeIncrease" aria-label="Aumentar tamanho da fonte">A+</button>
+                <button class="btn-accessibility" id="fontSizeDecrease" aria-label="Diminuir tamanho da fonte">A-</button>
+                <button class="btn-accessibility" id="toggleContrast" aria-label="Alternar modo alto contraste">Contraste</button>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        <!-- ===== HERO SECTION ===== -->
+        <section class="hero" id="hero" aria-labelledby="heroTitle">
+            <div class="hero-content">
+                <h2 id="heroTitle" class="hero-title">Futuro Sustentável</h2>
+                <p class="hero-subtitle">Transforme sua agricultura com práticas regenerativas e sustentáveis</p>
+                <button class="btn btn-primary" id="ctaButton">Descubra Mais</button>
+            </div>
+            <div class="hero-visual" aria-hidden="true"></div>
+        </section>
+
+        <!-- ===== SOBRE ===== -->
+        <section class="sobre" id="sobre" aria-labelledby="sobreTitle">
+            <div class="container">
+                <h2 id="sobreTitle" class="section-title">Sobre Agro Forte</h2>
+                <p class="section-intro">Somos uma iniciativa dedicada a promover práticas agrícolas que respeitam o meio ambiente e garantem a produção de alimentos saudáveis.</p>
+                
+                <div class="about-grid">
+                    <article class="about-card">
+                        <h3>🌍 Sustentabilidade</h3>
+                        <p>Práticas que preservam recursos naturais e biodiversidade para as próximas gerações.</p>
+                    </article>
+                    <article class="about-card">
+                        <h3>🌱 Regeneração</h3>
+                        <p>Recuperação de solos degradados através de técnicas inovadoras e comprovadas.</p>
+                    </article>
+                    <article class="about-card">
+                        <h3>🤝 Comunidade</h3>
+                        <p>Fortalecimento de agricultores e comunidades rurais através de conhecimento compartilhado.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PRÁTICAS (CARROSSEL) ===== -->
+        <section class="praticas" id="praticas" aria-labelledby="praticasTitle">
+            <div class="container">
+                <h2 id="praticasTitle" class="section-title">Práticas Sustentáveis</h2>
+                <p class="section-intro">Conheça as principais técnicas que transformam a agricultura em um modelo regenerativo.</p>
+                
+                <div class="carousel-container">
+                    <div class="carousel" id="carousel" role="region" aria-label="Carrossel de práticas sustentáveis">
+                        <div class="carousel-track" id="carouselTrack"></div>
+                    </div>
+                    
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev" id="prevBtn" aria-label="Prática anterior">
+                            <span aria-hidden="true">←</span>
+                        </button>
+                        <button class="carousel-btn next" id="nextBtn" aria-label="Próxima prática">
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                    
+                    <div class="carousel-indicators" id="indicators" role="tablist" aria-label="Indicadores do carrossel"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BENEFÍCIOS (ABAS/ACORDEÕES) ===== -->
+        <section class="beneficios" id="beneficios" aria-labelledby="beneficiosTitle">
+            <div class="container">
+                <h2 id="beneficiosTitle" class="section-title">Benefícios da Agricultura Sustentável</h2>
+                <p class="section-intro">Descubra como práticas sustentáveis beneficiam o planeta, a economia e a saúde.</p>
+                
+                <div class="tabs-container">
+                    <div class="tabs-buttons" role="tablist" aria-label="Categorias de benefícios">
+                        <button class="tab-btn active" id="tab-ambiental" role="tab" aria-selected="true" aria-controls="panel-ambiental">
+                            Ambiental
+                        </button>
+                        <button class="tab-btn" id="tab-economico" role="tab" aria-selected="false" aria-controls="panel-economico">
+                            Econômico
+                        </button>
+                        <button class="tab-btn" id="tab-social" role="tab" aria-selected="false" aria-controls="panel-social">
+                            Social
+                        </button>
+                    </div>
+                    
+                    <div class="tabs-content">
+                        <article class="tab-panel active" id="panel-ambiental" role="tabpanel" aria-labelledby="tab-ambiental">
+                            <div class="accordion-container" id="accordion-ambiental"></div>
+                        </article>
+                        <article class="tab-panel" id="panel-economico" role="tabpanel" aria-labelledby="tab-economico">
+                            <div class="accordion-container" id="accordion-economico"></div>
+                        </article>
+                        <article class="tab-panel" id="panel-social" role="tabpanel" aria-labelledby="tab-social">
+                            <div class="accordion-container" id="accordion-social"></div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GALERIA ===== -->
+        <section class="galeria" id="galeria" aria-labelledby="galeriaTitle">
+            <div class="container">
+                <h2 id="galeriaTitle" class="section-title">Galeria de Práticas</h2>
+                <p class="section-intro">Visualize exemplos reais de agricultura sustentável em ação.</p>
+                
+                <div class="gallery-grid" id="gallery" role="region" aria-label="Galeria de imagens"></div>
+            </div>
+        </section>
+
+        <!-- ===== CONTATO ===== -->
+        <section class="contato" id="contato" aria-labelledby="contatoTitle">
+            <div class="container">
+                <h2 id="contatoTitle" class="section-title">Entre em Contato</h2>
+                <p class="section-intro">Tem dúvidas? Gostaria de saber mais sobre nossas práticas?</p>
+                
+                <form class="contact-form" id="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" required aria-required="true" placeholder="Seu nome">
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required aria-required="true" placeholder="seu@email.com">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Sua mensagem..."></textarea>
+                        <span class="error-message" id="messageError"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                    <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Agro Forte</h3>
+                    <p>Transformando a agricultura para um futuro sustentável.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#praticas">Práticas</a></li>
+                        <li><a href="#beneficios">Benefícios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>Email: <a href="mailto:contato@agroforte.com">contato@agroforte.com</a></p>
+                    <p>Telefone: <a href="tel:+5511999999999">(11) 99999-9999</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Agro Forte. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Screen Reader Only Content -->
+    <div class="sr-only" id="skipLink">
+        <a href="#main">Pular para o conteúdo principal</a>
     </div>
-  </header>
 
-  <aside class="accessibility-controls">
-    <button onclick="changeFontSize('increase')" aria-label="Aumentar fonte">A+</button>
-    <button onclick="changeFontSize('decrease')" aria-label="Diminuir fonte">A-</button>
-    <button onclick="toggleContrast()" aria-label="Alto Contraste">◐</button>
-  </aside>
-
-  <main>
-    <section id="inicio" class="hero-section reveal">
-      <h1>Agro forte, futuro sustentável.</h1>
-      <p>A conexão entre o campo e a cidade através do malte.</p>
-    </section>
-
-    <section id="jornada" class="content-section reveal">
-      <div class="section-heading">
-        <h2>A Jornada do Grão</h2>
-      </div>
-      <div id="jornada-container" class="process-grid">
-        </div>
-    </section>
-
-    <section id="sustentabilidade" class="content-section reveal">
-      <div class="section-heading">
-        <h2>Sustentabilidade</h2>
-      </div>
-      <div id="sustentabilidade-container" class="cards-grid">
-        </div>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
